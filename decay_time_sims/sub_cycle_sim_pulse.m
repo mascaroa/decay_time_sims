@@ -74,7 +74,7 @@ dWFunc = @(t) W0 - dW * C(expParams,t);
 [V1] = odeToVectorField(diff(diff(y)) + dWFunc(t)/Q*diff(y) + dWFunc(t).^2*y == Fe*C(expParams,t)/m);
 % Make it a Matlab function:
 M1 = matlabFunction(V1,'vars', {'t','Y'}); 
-sol1{1} = ode45(M1,t1{1},[initConds],'refine',10);     %Solve it
+sol1{1} = ode45(M1,t1{1},[initConds]);     %Solve it
 
 for i = 2:N*2
     if mod(i,2)
@@ -85,7 +85,7 @@ for i = 2:N*2
         [V1] = odeToVectorField(diff(diff(y)) + W0/Q*diff(y) + W0^2*y == 0);
         M1 = matlabFunction(V1,'vars', {'t','Y'}); 
     end
-    sol1{i} = ode45(M1,t1{i},[deval(sol1{i-1},t1{i-1}(end))],'refine',10);     
+    sol1{i} = ode45(M1,t1{i},[deval(sol1{i-1},t1{i-1}(end))]);     
 end
     
 
