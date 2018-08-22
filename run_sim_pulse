@@ -26,12 +26,12 @@ function out = run_sim_pulse(tp,td,tau)
             fprintf('\n\n Elapsed time:\n\n')
             disp(toc)
             fprintf('\n\n')
-            if(~exist(strcat('tau_',num2str(tau),'\','tp_',num2str(tp(i)),'\')))
-                fprintf(strcat('Creating folder:\t','tau_',num2str(tau),'\\','tp_',num2str(tp(i)),'\\'))
-                mkdir(strcat('tau_',num2str(tau),'\','tp_',num2str(tp(i)),'\'))
+            if(~exist(strcat('..\decay_time_sim_results\tau_',num2str(tau),'\','tp_',num2str(tp(i)),'\')))
+                fprintf(strcat('Creating folder:\t','..\decay_time_sim_results\tau_',num2str(tau),'\\','tp_',num2str(tp(i)),'\\'))
+                mkdir(strcat('..\decay_time_sim_results\tau_',num2str(tau),'\','tp_',num2str(tp(i)),'\'))
             end
-            fprintf(strcat('Writing file:\t','tau_',num2str(tau),'\\','tp_',num2str(tp(i)),'\\','td_',num2str(td(j)),'.csv'))
-            csvwrite(strcat('tau_',num2str(tau),'\','tp_',num2str(tp(i)),'\','td_',num2str(td(j)),'.csv'),out1)
+            fprintf(strcat('Writing file:\t','..\decay_time_sim_results\tau_',num2str(tau),'\\','tp_',num2str(tp(i)),'\\','td_',num2str(td(j)),'.csv'))
+            csvwrite(strcat('..\decay_time_sim_results\tau_',num2str(tau),'\','tp_',num2str(tp(i)),'\','td_',num2str(td(j)),'.csv'),out1)
         end
     end
     out = toc;
