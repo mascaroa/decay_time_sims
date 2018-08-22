@@ -91,7 +91,7 @@ end
 
 [V2] = odeToVectorField(diff(diff(y)) + W0/Q*diff(y) + W0^2*y == 0);
 M2 = matlabFunction(V1,'vars', {'t','Y'});                   
-sol2 = ode45(M2,t2,[deval(sol1{N*2},t1{N*2}(end))],'refine',10);  
+sol2 = ode45(M2,t2,[deval(sol1{N*2},t1{N*2}(end))]);  
 
 
 % **** NEED TO OPTIMIZE THIS ****
