@@ -42,6 +42,6 @@ FdFunc = @(t) F0*sin(W0*t);                   % Drive force
 % This function makes the 2nd order diff eq. into a system of 1st orders:
 [V0] = odeToVectorField(diff(diff(y)) + W0/Q*diff(y) + W0^2*y == FdFunc(t)/m);
 M0 = matlabFunction(V0,'vars', {'t','Y'});   % Make it a Matlab function
-sol0 = ode23(M0,t0,[0 1.9e-9]);      % Solve it, y(0) = 0, y'(0) = 1
+sol0 = ode23(M0,t0,[0 1]);      % Solve it, y(0) = 0, y'(0) = 1
 
 output = sol0;

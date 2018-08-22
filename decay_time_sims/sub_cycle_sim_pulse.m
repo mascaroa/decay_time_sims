@@ -71,7 +71,7 @@ C = @(params,t) (1-exp(-(t-t1{1}(1))/params(1)));
 dWFunc = @(t) W0 - dW * C(expParams,t);
 
 % This is the actual system response with an exponential pulse applied at t1(1):
-[V1] = odeToVectorField(diff(diff(y)) + dWFunc(t)/Q*diff(y) + dWFunc(t).^2*y == Fe*C(expParams,t)/m);
+[V1] = odeToVectorField(diff(diff(y)) + dWFunc(t)/Q*diff(y) + dWFunc(t).^2*y == Fe*C(expParams,t)/m)*1e9;
 % Make it a Matlab function:
 M1 = matlabFunction(V1,'vars', {'t','Y'}); 
 sol1{1} = ode23(M1,t1{1},[initConds]);     %Solve it
@@ -79,7 +79,7 @@ sol1{1} = ode23(M1,t1{1},[initConds]);     %Solve it
 for i = 2:N*2
     if mod(i,2)
         C = @(params,t) (1-exp(-(t-t1{i}(1))/params(1)));
-        [V1] = odeToVectorField(diff(diff(y)) + dWFunc(t)/Q*diff(y) + dWFunc(t).^2*y == Fe*C(expParams,t)/m);
+        [V1] = odeToVectorField(diff(diff(y)) + dWFunc(t)/Q*diff(y) + dWFunc(t).^2*y == Fe*C(expParams,t)/m*1e9);
         M1 = matlabFunction(V1,'vars', {'t','Y'}); 
     else
         [V1] = odeToVectorField(diff(diff(y)) + W0/Q*diff(y) + W0^2*y == 0);

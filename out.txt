@@ -8,7 +8,7 @@
 To get started, type one of these: helpwin, helpdesk, or demo.
 For product information, visit www.mathworks.com.
  
->> >> >> >> >> >> 
+>> >> >> >> >> >> >> >> >> 
 
 Starting script....
 
@@ -18,4 +18,76 @@ Starting first simulation...
 
 
 
- Evaluating ring-up -> steady state solution...>> 
+ Evaluating ring-up -> steady state solution...  done.
+
+Getting initial conditions for each delay time..... done.
+
+Starting parallel pool (parpool) using the 'local' profile ... connected to 6 workers.
+
+ans = 
+
+ Pool with properties: 
+
+            Connected: true
+           NumWorkers: 6
+              Cluster: local
+        AttachedFiles: {}
+          IdleTimeout: 30 minute(s) (30 minutes remaining)
+          SpmdEnabled: true
+
+Writing file:	../outputs/Q500tau_3e-07/tp_1e-07/td_5e-08.csv
+Writing file:	../outputs/Q500tau_3e-07/tp_1e-07/td_1e-08.csv
+Writing file:	../outputs/Q500tau_3e-07/tp_1e-07/td_2e-08.csv
+Creating folder:	../outputs/tau_3e-07/tp_1e-07/Writing file:	../outputs/Q500tau_3e-07/tp_1e-07/td_4e-08.csv
+Writing file:	../outputs/Q500tau_3e-07/tp_1e-07/td_3e-08.csv
+Writing file:	../outputs/Q500tau_3e-07/tp_1e-07/td_6e-08.csv
+
+
+Done pulse time 1 ...
+
+Writing file:	../outputs/Q500tau_3e-07/tp_5e-07/td_5e-08.csv
+Writing file:	../outputs/Q500tau_3e-07/tp_5e-07/td_1e-08.csv
+Writing file:	../outputs/Q500tau_3e-07/tp_5e-07/td_2e-08.csv
+Writing file:	../outputs/Q500tau_3e-07/tp_5e-07/td_4e-08.csv
+Creating folder:	../outputs/tau_3e-07/tp_5e-07/Writing file:	../outputs/Q500tau_3e-07/tp_5e-07/td_3e-08.csv
+Writing file:	../outputs/Q500tau_3e-07/tp_5e-07/td_6e-08.csv
+
+
+Done pulse time 2 ...
+
+Writing file:	../outputs/Q500tau_3e-07/tp_1e-06/td_5e-08.csv
+Creating folder:	../outputs/tau_3e-07/tp_1e-06/Writing file:	../outputs/Q500tau_3e-07/tp_1e-06/td_1e-08.csv
+Writing file:	../outputs/Q500tau_3e-07/tp_1e-06/td_2e-08.csv
+Writing file:	../outputs/Q500tau_3e-07/tp_1e-06/td_4e-08.csv
+Writing file:	../outputs/Q500tau_3e-07/tp_1e-06/td_3e-08.csv
+Writing file:	../outputs/Q500tau_3e-07/tp_1e-06/td_6e-08.csv
+
+
+Done pulse time 3 ...
+
+Writing file:	../outputs/Q500tau_3e-07/tp_1.5e-06/td_5e-08.csv
+Writing file:	../outputs/Q500tau_3e-07/tp_1.5e-06/td_1e-08.csv
+Writing file:	../outputs/Q500tau_3e-07/tp_1.5e-06/td_2e-08.csv
+Creating folder:	../outputs/tau_3e-07/tp_1.5e-06/Writing file:	../outputs/Q500tau_3e-07/tp_1.5e-06/td_4e-08.csv
+Writing file:	../outputs/Q500tau_3e-07/tp_1.5e-06/td_3e-08.csv
+Writing file:	../outputs/Q500tau_3e-07/tp_1.5e-06/td_6e-08.csv
+
+
+Done pulse time 4 ...
+
+Writing file:	../outputs/Q500tau_3e-07/tp_3e-06/td_5e-08.csv
+Writing file:	../outputs/Q500tau_3e-07/tp_3e-06/td_1e-08.csv
+Writing file:	../outputs/Q500tau_3e-07/tp_3e-06/td_2e-08.csv
+Writing file:	../outputs/Q500tau_3e-07/tp_3e-06/td_4e-08.csv
+Writing file:	../outputs/Q500tau_3e-07/tp_3e-06/td_3e-08.csv
+Creating folder:	../outputs/tau_3e-07/tp_3e-06/Writing file:	../outputs/Q500tau_3e-07/tp_3e-06/td_6e-08.csv
+
+
+Done pulse time 5 ...
+
+
+ans =
+
+   1.9131e+03
+
+>> 
