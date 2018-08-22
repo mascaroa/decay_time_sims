@@ -55,7 +55,7 @@ function out = run_sim_pulse(tp,td,tau)
                 fprintf(strcat('Creating folder:\t','../outputs/tau_',num2str(tau),'/','tp_',num2str(tp(i)),'/'))
                 mkdir(strcat('../outputs/Q500tau_',num2str(tau),'/','tp_',num2str(tp(i)),'/'))
             end 
-                fprintf(strcat('Writing file:\t','../../outputs/tau_',num2str(tau),'/','tp_',num2str(tp(i)),'/','td_',num2str(td(j)),'.csv'))
+                fprintf(strcat('Writing file:\t','../outputs/Q500tau_',num2str(tau),'/','tp_',num2str(tp(i)),'/','td_',num2str(td(j)),'.csv'))
                 csvwrite(strcat('../outputs/Q500tau_',num2str(tau),'/','tp_',num2str(tp(i)),'/','td_',num2str(td(j)),'.csv'),out1)
         end 
         fprintf('\n\nDone pulse time %d ...\n\n',i)
