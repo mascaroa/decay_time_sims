@@ -51,15 +51,15 @@ function out = run_sim_pulse(tp,td,tau)
             
             % If no directory for this pulse time and tau, create one then
             % save the file
-            if(~exist(strcat('../decay_time_sim_results/Q500tau_',num2str(tau),'/','tp_',num2str(tp(i)),'/'),'dir'))
-                fprintf(strcat('Creating folder:\t','tau_',num2str(tau),'/','tp_',num2str(tp(i)),'/'))
-                mkdir(strcat('../decay_time_sim_results/Q500tau_',num2str(tau),'/','tp_',num2str(tp(i)),'/'))
+            if(~exist(strcat('../../outputs/Q500tau_',num2str(tau),'/','tp_',num2str(tp(i)),'/'),'dir'))
+                fprintf(strcat('Creating folder:\t','../../outputs/tau_',num2str(tau),'/','tp_',num2str(tp(i)),'/'))
+                mkdir(strcat('../../outputs/Q500tau_',num2str(tau),'/','tp_',num2str(tp(i)),'/'))
             end 
-                fprintf(strcat('Writing file:\t','../decay_time_sim_results/tau_',num2str(tau),'/','tp_',num2str(tp(i)),'/','td_',num2str(td(j)),'.csv'))
-                csvwrite(strcat('../decay_time_sim_results/Q500tau_',num2str(tau),'/','tp_',num2str(tp(i)),'/','td_',num2str(td(j)),'.csv'),out1)
+                fprintf(strcat('Writing file:\t','../../outputs/tau_',num2str(tau),'/','tp_',num2str(tp(i)),'/','td_',num2str(td(j)),'.csv'))
+                csvwrite(strcat('../../outputs/Q500tau_',num2str(tau),'/','tp_',num2str(tp(i)),'/','td_',num2str(td(j)),'.csv'),out1)
         end 
         fprintf('\n\nDone pulse time %d ...\n\n',i)
     end
-    csvwrite(strcat('../decay_time_sim_results/Q500tau_',num2str(tau),'/','ringUp.csv'),vertcat(t0Full,y0Full));
+    csvwrite(strcat('../../outputs/Q500tau_',num2str(tau),'/','ringUp.csv'),vertcat(t0Full,y0Full));
     out = toc;
 end
