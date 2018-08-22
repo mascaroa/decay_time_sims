@@ -1,0 +1,143 @@
+
+----------------------------------------------------------------------------
+Warning: glibc 2.3.2      - Unsupported version
+         glibc 2.11.2     - MATLAB built using this version
+----------------------------------------------------------------------------
+-> Your configuration APPEARS to be too OLD to run this MATLAB program!
+----------------------------------------------------------------------------
+   For system requirements consult http://www.mathworks.com ...
+ 
+***************************************************************************
+-> Best to quit by pressing <return> at the next prompt ...
+ 
+   Do you still want to try to continue? (y/[n]) > 
+----------------------------------------------------------------------------
+Warning: glibc 2.3.2      - Unsupported version
+         glibc 2.11.2     - MATLAB built using this version
+----------------------------------------------------------------------------
+-> Your configuration APPEARS to be too OLD to run this MATLAB program!
+----------------------------------------------------------------------------
+   For system requirements consult http://www.mathworks.com ...
+ 
+***************************************************************************
+-> Best to quit by pressing <return> at the next prompt ...
+ 
+   Do you still want to try to continue? (y/[n]) > 
+----------------------------------------------------------------------------
+Warning: glibc 2.3.2      - Unsupported version
+         glibc 2.11.2     - MATLAB built using this version
+----------------------------------------------------------------------------
+-> Your configuration APPEARS to be too OLD to run this MATLAB program!
+----------------------------------------------------------------------------
+   For system requirements consult http://www.mathworks.com ...
+ 
+***************************************************************************
+-> Best to quit by pressing <return> at the next prompt ...
+ 
+   Do you still want to try to continue? (y/[n]) > 
+----------------------------------------------------------------------------
+Warning: glibc 2.3.2      - Unsupported version
+         glibc 2.11.2     - MATLAB built using this version
+----------------------------------------------------------------------------
+-> Your configuration APPEARS to be too OLD to run this MATLAB program!
+----------------------------------------------------------------------------
+   For system requirements consult http://www.mathworks.com ...
+ 
+***************************************************************************
+-> Best to quit by pressing <return> at the next prompt ...
+ 
+   Do you still want to try to continue? (y/[n]) > 
+----------------------------------------------------------------------------
+Warning: glibc 2.3.2      - Unsupported version
+         glibc 2.11.2     - MATLAB built using this version
+----------------------------------------------------------------------------
+-> Your configuration APPEARS to be too OLD to run this MATLAB program!
+----------------------------------------------------------------------------
+   For system requirements consult http://www.mathworks.com ...
+ 
+***************************************************************************
+-> Best to quit by pressing <return> at the next prompt ...
+ 
+   Do you still want to try to continue? (y/[n]) > 
+----------------------------------------------------------------------------
+Warning: glibc 2.3.2      - Unsupported version
+         glibc 2.11.2     - MATLAB built using this version
+----------------------------------------------------------------------------
+-> Your configuration APPEARS to be too OLD to run this MATLAB program!
+----------------------------------------------------------------------------
+   For system requirements consult http://www.mathworks.com ...
+ 
+***************************************************************************
+-> Best to quit by pressing <return> at the next prompt ...
+ 
+   Do you still want to try to continue? (y/[n]) > 
+----------------------------------------------------------------------------
+Warning: glibc 2.3.2      - Unsupported version
+         glibc 2.11.2     - MATLAB built using this version
+----------------------------------------------------------------------------
+-> Your configuration APPEARS to be too OLD to run this MATLAB program!
+----------------------------------------------------------------------------
+   For system requirements consult http://www.mathworks.com ...
+ 
+***************************************************************************
+-> Best to quit by pressing <return> at the next prompt ...
+ 
+   Do you still want to try to continue? (y/[n]) > 
+                            < M A T L A B (R) >
+                  Copyright 1984-2011 The MathWorks, Inc.
+                    R2011b (7.13.0.564) 64-bit (glnxa64)
+                              August 13, 2011
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+>> >> >> >> >> >> 
+
+Starting script....
+
+>> 
+
+Starting first simulation...
+
+>> 
+                            < M A T L A B (R) >
+                  Copyright 1984-2014 The MathWorks, Inc.
+                    R2014a (8.3.0.532) 64-bit (glnxa64)
+                             February 11, 2014
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+>> >> >> >> >> >> 
+
+Starting script....
+
+>> 
+
+Starting first simulation...
+
+
+
+ Evaluating ring-up -> steady state solution...>> 
+                            < M A T L A B (R) >
+                  Copyright 1984-2014 The MathWorks, Inc.
+                    R2014a (8.3.0.532) 64-bit (glnxa64)
+                             February 11, 2014
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+>> >> >> >> >> >> 
+
+Starting script....
+
+>> 
+
+Starting first simulation...
+
+
+
+ Evaluating ring-up -> steady state solution...>> 
