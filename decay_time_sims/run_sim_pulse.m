@@ -40,7 +40,7 @@ function out = run_sim_pulse(tp,td,tau)
     end
     
     fprintf('\n\nSaving initial ring-up data...')
-    csvwrite(strcat('../outputs/Q500tau_',num2str(tau),'/','ringUpTail.csv'),vertcat(t0Full,y0Full));
+    csvwrite(strcat('../outputs/Q500tau_',num2str(tau),'/','ringUpTail.csv'),vertcat(t0tail,y0tail));
     fprintf('\t  done.\n\n')
 
     % Get the end-points to use as initial conditions for the pulse-applied
