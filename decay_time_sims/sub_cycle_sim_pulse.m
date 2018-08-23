@@ -63,6 +63,8 @@ t2 = t1{N*2}(end):ts:t1{N*2}(end)+1000*T;
 
 %FdFunc = @(t) F0*sin(W0*t);                   % Drive force
 
+opts = odeset('Refine',10);
+
 % Exponential function:
 expParams = [tau];
 C = @(params,t) (1-exp(-(t-t1{1}(1))/params(1)));
@@ -74,7 +76,7 @@ dWFunc = @(t) W0 - dW * C(expParams,t);
 [V1] = odeToVectorField(diff(diff(y)) + dWFunc(t)/Q*diff(y) + dWFunc(t).^2*y == Fe*C(expParams,t)/m)*1e9;
 % Make it a Matlab function:
 M1 = matlabFunction(V1,'vars', {'t','Y'}); 
-sol1{1} = ode23(M1,[t1{1}(1),t1{1}(end)],[initConds]);     %Solve it
+sol1{1} = ode23(M1,[t1{1}(1),t1{1}(end)],[initConds],opts);     %Solve it
 
 for i = 2:N*2
     if mod(i,2)
@@ -85,13 +87,13 @@ for i = 2:N*2
         [V1] = odeToVectorField(diff(diff(y)) + W0/Q*diff(y) + W0^2*y == 0);
         M1 = matlabFunction(V1,'vars', {'t','Y'}); 
     end
-    sol1{i} = ode23(M1,[t1{i}(1),t1{i}(end)],[deval(sol1{i-1},t1{i-1}(end))]);     
+    sol1{i} = ode23(M1,[t1{i}(1),t1{i}(end)],[deval(sol1{i-1},t1{i-1}(end))],opts);     
 end
     
 
 [V2] = odeToVectorField(diff(diff(y)) + W0/Q*diff(y) + W0^2*y == 0);
 M2 = matlabFunction(V1,'vars', {'t','Y'});                   
-sol2 = ode23(M2,[t2(1),t2(end)],[deval(sol1{N*2},t1{N*2}(end))]);  
+sol2 = ode23(M2,[t2(1),t2(end)],[deval(sol1{N*2},t1{N*2}(end))],opts);  
 
 
 % **** NEED TO OPTIMIZE THIS ****
