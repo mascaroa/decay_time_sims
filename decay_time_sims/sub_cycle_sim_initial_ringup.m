@@ -39,7 +39,7 @@ t0 = 0:ts:tTrig+T/4+td;            % Ring-up time array
 
 FdFunc = @(t) F0*sin(W0*t);                   % Drive force
 
-opts = odeset('Refine',10);
+opts = odeset('Refine',10,'MaxStep',(t0(2)-t0(1)));
 
 % This function makes the 2nd order diff eq. into a system of 1st orders:
 [V0] = odeToVectorField(diff(diff(y)) + W0/Q*diff(y) + W0^2*y == FdFunc(t)/m*1e9);

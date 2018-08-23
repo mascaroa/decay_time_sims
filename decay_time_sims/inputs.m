@@ -1,4 +1,5 @@
 addpath(genpath('/ltmp/mascaroa/decay_time_sims'))
+%addpath('~/Dropbox/git/decay_time_sims/decay_time_sims')
 
 % I should add a params.dat file for these....
 % TODO I guess

@@ -63,7 +63,7 @@ t2 = t1{N*2}(end):ts:t1{N*2}(end)+1000*T;
 
 %FdFunc = @(t) F0*sin(W0*t);                   % Drive force
 
-opts = odeset('Refine',10);
+opts = odeset('MaxStep',ts);
 
 % Exponential function:
 expParams = [tau];
