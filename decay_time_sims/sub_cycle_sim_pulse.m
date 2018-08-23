@@ -51,7 +51,7 @@ end
 % Shift the trigger time by 1/4 period because of the phase between
 % drive/oscillatort1{N*2}(end):ts:t1{N*2}(end)+1000*T
 
-t0 = 0:ts:tTrig+T/4+td;            % Ring-up time array
+t0 = 0:ts:tTrig+T/4+td-ts;            % Ring-up time array
 t1{1} = t0(end):ts:t0(end)+tp;  
 for i = 2:N*2
     t1{i} = t1{i-1}(end)+ts:ts:t1{i-1}(end)+(1-mod(i,2))*(1/f0-tp)+mod(i,2)*tp;     % Pulse-applied time array
@@ -99,10 +99,11 @@ sol2 = ode23(M2,[t2(1),t2(end)],[deval(sol1{N*2},t1{N*2}(end))]);
 % **** NEED TO OPTIMIZE THIS ****
 % Maybe not actually, it only takes about 50ms on my laptop...
 
-y1 = [];
 
-for i = 1:N*2
-    y1 = horzcat(y1,deval(sol1{i},t1{i},1));
+y1 = deval(sol1{i},t1{i},1);
+for i = 2:N*2
+    tempy1 = deval(sol1{i},t1{i},1);
+    y1 = horzcat(y1,tempy1(2:end));
 end
 y2 = deval(sol2,t2,1);
 tf = horzcat(horzcat(t1{1}(2:end),t1{2:end}),t2(2:end));
