@@ -39,11 +39,19 @@ t0 = 0:ts:tTrig+T/4+td;            % Ring-up time array
 
 FdFunc = @(t) F0*sin(W0*t);                   % Drive force
 
-opts = odeset('Refine',10,'MaxStep',(t0(2)-t0(1)));
+%opts = odeset('Refine',10,'MaxStep',(t0(2)-t0(1)));
 
 % This function makes the 2nd order diff eq. into a system of 1st orders:
-[V0] = odeToVectorField(diff(diff(y)) + W0/Q*diff(y) + W0^2*y == FdFunc(t)/m*1e9);
+fprintf('\n\nCreating vector field from ODE...')
+[V0] = odeToVectorField(diff(diff(y)) + W0/Q*diff(y) + W0^2*y == FdFunc(t)/m);
+fprintf('\t  done.')
+
+fprintf('\n\nMaking it a MATLAB function...')
 M0 = matlabFunction(V0,'vars', {'t','Y'});   % Make it a Matlab function
-sol0 = ode23(M0,[t0(1),t0(end)],[0 1],opts);      % Solve it, y(0) = 0, y'(0) = 1
+fprintf('\t  done.')
+
+fprintf('\n\nSolving ODES...')
+sol0 = ode23(M0,[t0(1),t0(end)],[0,1e-8]);      % Solve it, y(0) = 0, y'(0) = 1
+fprintf('\t  done.')
 
 output = sol0;

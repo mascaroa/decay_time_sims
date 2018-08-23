@@ -148,4 +148,16 @@ Starting first simulation...
 
 
 
- Evaluating ring-up -> steady state solution...
+ Evaluating ring-up -> steady state solution...  done.
+
+
+
+Creating directory ../outputs/Q500tau_3e-07...  done.
+
+
+
+ Saving initial ring-up data...  done.
+
+Getting initial conditions for each delay time..... done.
+
+Starting parallel pool (parpool) using the 'local' profile ... >> 

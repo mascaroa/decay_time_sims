@@ -28,10 +28,10 @@ function out = run_sim_pulse(tp,td,tau)
     [~,b] = max(td);
     sol0 = sub_cycle_sim_initial_ringup(f0,Q,k,F0,Fs,td(b));
     
-    fprintf('\n\n Evaluating ring-up -> steady state solution...')
-    t0Full = 0:ts:t0end+td(b);
-    y0Full = deval(sol0,t0Full); 
-    fprintf('  done.\n\n')
+    fprintf('\n\nEvaluating steady state solution for 50 cycles...')
+    t0tail = t0end+td(b)-50*T:ts:t0end+td(b);
+    y0tail = deval(sol0,t0tail,1); 
+    fprintf('\t  done.\n\n')
     
     if(~exist(strcat('../outputs/Q500tau_',num2str(tau))))
 	    fprintf(strcat('\n\nCreating directory ../outputs/Q500tau_',num2str(tau),'...')) 
@@ -39,17 +39,17 @@ function out = run_sim_pulse(tp,td,tau)
 	    fprintf('  done.\n\n')
     end
     
-    fprintf('\n\n Saving initial ring-up data...')
-    csvwrite(strcat('../outputs/Q500tau_',num2str(tau),'/','ringUp.csv'),vertcat(t0Full,y0Full));
-    fprintf('  done.\n\n')
+    fprintf('\n\nSaving initial ring-up data...')
+    csvwrite(strcat('../outputs/Q500tau_',num2str(tau),'/','ringUpTail.csv'),vertcat(t0Full,y0Full));
+    fprintf('\t  done.\n\n')
 
     % Get the end-points to use as initial conditions for the pulse-applied
     % time regions
-    fprintf('Getting initial conditions for each delay time.....')
+    fprintf('\n\nGetting initial conditions for each delay time.....')
     for j = 1:length(td)
         initConds(j,:) = deval(sol0,t0end+td(j));
     end
-    fprintf(' done.\n\n')
+    fprintf('\t done.\n\n')
     
     
     % Iterate through each pulse length and solve each set of delay times
@@ -62,13 +62,15 @@ function out = run_sim_pulse(tp,td,tau)
             % If no directory for this pulse time and tau, create one then
             % save the file
             if(~exist(strcat('../outputs/Q500tau_',num2str(tau),'/','tp_',num2str(tp(i)),'/'),'dir'))
-                fprintf(strcat('Creating folder:\t','../outputs/tau_',num2str(tau),'/','tp_',num2str(tp(i)),'/'))
+                fprintf(strcat('\n\nCreating folder:\t','../outputs/tau_',num2str(tau),'/','tp_',num2str(tp(i)),'/ ...'))
                 mkdir(strcat('../outputs/Q500tau_',num2str(tau),'/','tp_',num2str(tp(i)),'/'))
-            end 
-                fprintf(strcat('Writing file:\t','../outputs/Q500tau_',num2str(tau),'/','tp_',num2str(tp(i)),'/','td_',num2str(td(j)),'.csv'))
+            	fprintf('\t  done.')
+	    end 
+                fprintf(strcat('\n\nWriting file:\t','../outputs/Q500tau_',num2str(tau),'/','tp_',num2str(tp(i)),'/','td_',num2str(td(j)),'.csv ...'))
                 csvwrite(strcat('../outputs/Q500tau_',num2str(tau),'/','tp_',num2str(tp(i)),'/','td_',num2str(td(j)),'.csv'),out1)
+		fprintf('\t  done.')
         end 
-        fprintf('\n\nDone pulse time %d ...\n\n',i)
+        fprintf('\n\nDone pulse time %d ...\n*****************\n\n',i)
     end
     out = toc;
 end
