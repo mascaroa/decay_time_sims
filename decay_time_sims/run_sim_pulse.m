@@ -33,6 +33,16 @@ function out = run_sim_pulse(tp,td,tau)
     y0Full = deval(sol0,t0Full); 
     fprintf('  done.\n\n')
     
+    if(~exist(strcat('../outputs/Q500tau_',num2str(tau))))
+	    fprintf(strcat('\n\nCreating directory ../outputs/Q500tau_',num2str(tau),'...')) 
+	    mkdir(strcat('../outputs/Q500tau_',num2str(tau)))
+	    fprintf('  done.\n\n')
+    end
+    
+    fprintf('\n\n Saving initial ring-up data...')
+    csvwrite(strcat('../outputs/Q500tau_',num2str(tau),'/','ringUp.csv'),vertcat(t0Full,y0Full));
+    fprintf('  done.\n\n')
+
     % Get the end-points to use as initial conditions for the pulse-applied
     % time regions
     fprintf('Getting initial conditions for each delay time.....')
@@ -60,6 +70,5 @@ function out = run_sim_pulse(tp,td,tau)
         end 
         fprintf('\n\nDone pulse time %d ...\n\n',i)
     end
-    csvwrite(strcat('../outputs/Q500tau_',num2str(tau),'/','ringUp.csv'),vertcat(t0Full,y0Full));
     out = toc;
 end
