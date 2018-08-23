@@ -40,7 +40,7 @@ function out = run_sim_pulse(tp,td,tau)
     end
     
     fprintf('\n\nSaving initial ring-up data...')
-    csvwrite(strcat('../outputs/Q500tau_',num2str(tau),'/','ringUpTail.csv'),vertcat(t0tail,y0tail));
+    dlmwrite(strcat('../outputs/Q500tau_',num2str(tau),'/','ringUpTail.csv'),vertcat(t0tail,y0tail),'delimiter',',','precision',9);
     fprintf('\t  done.\n\n')
 
     % Get the end-points to use as initial conditions for the pulse-applied
@@ -67,7 +67,7 @@ function out = run_sim_pulse(tp,td,tau)
             	fprintf('\t  done.')
 	    end 
                 fprintf(strcat('\n\nWriting file:\t','../outputs/Q500tau_',num2str(tau),'/','tp_',num2str(tp(i)),'/','td_',num2str(td(j)),'.csv ...'))
-                csvwrite(strcat('../outputs/Q500tau_',num2str(tau),'/','tp_',num2str(tp(i)),'/','td_',num2str(td(j)),'.csv'),out1)
+                dlmwrite(strcat('../outputs/Q500tau_',num2str(tau),'/','tp_',num2str(tp(i)),'/','td_',num2str(td(j)),'.csv'),out1,'delimiter',',','precision',9)
 		fprintf('\t  done.')
         end 
         fprintf('\n\nDone pulse time %d ...\n*****************\n\n',i)
