@@ -108,7 +108,7 @@ for i = 2:N*2
     t1 = horzcat(t1,t1{i}(2:end));
 end
 y2 = deval(sol2,t2,1);
-tf = horzcat(horzcat(t1(2:end),t2(2:end));
+tf = horzcat(t1(2:end),t2(2:end));
 yf = horzcat(y1(2:end),y2(2:end));
 
 output = vertcat(tf,yf);
