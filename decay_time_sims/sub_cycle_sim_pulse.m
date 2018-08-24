@@ -100,15 +100,15 @@ sol2 = ode23(M2,[t2(1),t2(end)],[deval(sol1{N*2},t1{N*2}(end))]);
 % Maybe not actually, it only takes about 50ms on my laptop...
 
 
-y1 = deval(sol1{1},t1{1},1);
-t1f = t1{1};
+y1 = deval(sol1{1},t1{1}(1:end-1),1);
+t1f = t1{1}(1:end-1);
 for i = 2:N*2
     tempy1 = deval(sol1{i},t1{i},1);
-    y1 = horzcat(y1,tempy1(2:end));
-    t1f = horzcat(t1f,t1{i}(2:end));
+    y1 = horzcat(y1,tempy1(1:end-1));
+    t1f = horzcat(t1f,t1{i}(1:end-1));
 end
 y2 = deval(sol2,t2,1);
-tf = horzcat(t1f(2:end),t2(2:end));
-yf = horzcat(y1(2:end),y2(2:end));
+tf = horzcat(t1f,t2);
+yf = horzcat(y1,y2);
 
 output = vertcat(tf,yf);
