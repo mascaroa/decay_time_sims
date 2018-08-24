@@ -14,7 +14,7 @@ function out = run_sim_pulse(tp,td,tau)
 
     tau = tau;
     beta = 1;
-    fprintf('\n\nStarting first simulation...\n\n')
+    fprintf('\n\nStarting initial ringup simulation...\n\n')
     
     tic
     
@@ -28,22 +28,22 @@ function out = run_sim_pulse(tp,td,tau)
     [~,b] = max(td);
     sol0 = sub_cycle_sim_initial_ringup(f0,Q,k,F0,Fs,td(b));
     
-    fprintf('\n\nEvaluating steady state solution for 50 cycles...')
-    t0tail = t0end+td(b)-50*T:ts:t0end+td(b);
-    y0tail = deval(sol0,t0tail,1); 
-    fprintf('\t  done.\n\n')
+    %fprintf('\n\nEvaluating steady state solution for 50 cycles...')
+    %t0tail = t0end+td(b)-50*T:ts:t0end+td(b);
+    %y0tail = deval(sol0,t0tail,1); 
+    %fprintf('\t  done.\n\n')
     
-    if(~exist(strcat('../outputs/Q500tau_',num2str(tau))))
-	    fprintf(strcat('\n\nCreating directory ../outputs/Q500tau_',num2str(tau),'...')) 
-	    mkdir(strcat('../outputs/Q500tau_',num2str(tau)))
-	    fprintf('  done.\n\n')
-    end
+    %if(~exist(strcat('../outputs/Q500tau_',num2str(tau))))
+    %	    fprintf(strcat('\n\nCreating directory ../outputs/Q500tau_',num2str(tau),'...')) 
+    %	    mkdir(strcat('../outputs/Q500tau_',num2str(tau)))
+    %	    fprintf('  done.\n\n')
+    %end
     
-    sstail = vertcat(t0tail,y0tail);
+    %sstail = vertcat(t0tail,y0tail);
 
-    fprintf('\n\nSaving initial ring-up data...')
-    dlmwrite(strcat('../outputs/Q500tau_',num2str(tau),'/','ringUpTail.csv'),vertcat(t0tail,y0tail),'delimiter',',','precision',9);
-    fprintf('\t  done.\n\n')
+    %fprintf('\n\nSaving initial ring-up data...')
+    %dlmwrite(strcat('../outputs/Q500tau_',num2str(tau),'/','ringUpTail.csv'),vertcat(t0tail,y0tail),'delimiter',',','precision',9);
+    %fprintf('\t  done.\n\n')
 
     % Get the end-points to use as initial conditions for the pulse-applied
     % time regions
@@ -60,7 +60,7 @@ function out = run_sim_pulse(tp,td,tau)
     for i = 1:length(tp)
         parfor j = 1:length(td)
             out1 = sub_cycle_sim_pulse(initConds(j,:),f0,Q,k,F0,Fes,df,tau,Fs,tp(i),100,td(j));
-            
+	    out1(1,:) = out1(1,:)-t0end;	% Zero the time when the drive is turned off            
             % If no directory for this pulse time and tau, create one then
             % save the file
             if(~exist(strcat('../outputs/Q500tau_',num2str(tau),'/','tp_',num2str(tp(i)),'/'),'dir'))
@@ -70,7 +70,8 @@ function out = run_sim_pulse(tp,td,tau)
 	    end 
                 fprintf(strcat('\n\nWriting file:\t','../outputs/Q500tau_',num2str(tau),'/','tp_',num2str(tp(i)),'/','td_',num2str(td(j)),'.csv ...'))
 		dlmwrite(strcat('../outputs/Q500tau_',num2str(tau),'/','tp_',num2str(tp(i)),'/','td_',num2str(td(j)),'.csv')...
-		,horzcat(sstail(:,1:end-(td(j)-td(b))/ts),out1),'delimiter',',','precision',9)
+		,horzcat(vertcat((t0end+td(j)-T*50:ts:t0end+td(j))-t0end,deval(sol0,t0end+td(j)-T*50:ts:t0end+td(j),1)),out1)...
+		,'delimiter',',','precision',9)
 		fprintf('\t  done.')
         end 
         fprintf('\n\nDone pulse time %d ...\n*****************\n\n',i)
