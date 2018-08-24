@@ -39,6 +39,8 @@ function out = run_sim_pulse(tp,td,tau)
 	    fprintf('  done.\n\n')
     end
     
+    sstail = vertcat(t0tail,y0tail);
+
     fprintf('\n\nSaving initial ring-up data...')
     dlmwrite(strcat('../outputs/Q500tau_',num2str(tau),'/','ringUpTail.csv'),vertcat(t0tail,y0tail),'delimiter',',','precision',9);
     fprintf('\t  done.\n\n')
@@ -67,7 +69,7 @@ function out = run_sim_pulse(tp,td,tau)
             	fprintf('\t  done.')
 	    end 
                 fprintf(strcat('\n\nWriting file:\t','../outputs/Q500tau_',num2str(tau),'/','tp_',num2str(tp(i)),'/','td_',num2str(td(j)),'.csv ...'))
-                dlmwrite(strcat('../outputs/Q500tau_',num2str(tau),'/','tp_',num2str(tp(i)),'/','td_',num2str(td(j)),'.csv'),out1,'delimiter',',','precision',9)
+		dlmwrite(strcat('../outputs/Q500tau_',num2str(tau),'/','tp_',num2str(tp(i)),'/','td_',num2str(td(j)),'.csv'),horzcat(sstail(:,1:end-(td(j)-td(b))/ts)),out1),'delimiter',',','precision',9)
 		fprintf('\t  done.')
         end 
         fprintf('\n\nDone pulse time %d ...\n*****************\n\n',i)
