@@ -69,6 +69,8 @@ opts = odeset('MaxStep',ts);
 expParams = [tau];
 C = @(params,t) (1-exp(-(t-t1{1}(1))/params(1)));
 
+opts = odeset('RelTol', 1e-10, 'AbsTol', 1e-12);
+
 % Frequency change(t) after exponential pulse is applied:
 dWFunc = @(t) W0 - dW * C(expParams,t);
 
@@ -76,7 +78,7 @@ dWFunc = @(t) W0 - dW * C(expParams,t);
 [V1] = odeToVectorField(diff(diff(y)) + dWFunc(t)/Q*diff(y) + dWFunc(t).^2*y == Fe*C(expParams,t)/m);
 % Make it a Matlab function:
 M1 = matlabFunction(V1,'vars', {'t','Y'}); 
-sol1{1} = ode45(M1,[t1{1}(1),t1{1}(end)],[initConds]);     %Solve it
+sol1{1} = ode45(M1,[t1{1}(1),t1{1}(end)],[initConds],opts);     %Solve it
 
 for i = 2:N*2
     if mod(i,2)
@@ -87,13 +89,13 @@ for i = 2:N*2
         [V1] = odeToVectorField(diff(diff(y)) + W0/Q*diff(y) + W0^2*y == 0);
         M1 = matlabFunction(V1,'vars', {'t','Y'}); 
     end
-    sol1{i} = ode45(M1,[t1{i}(1),t1{i}(end)],[deval(sol1{i-1},t1{i-1}(end))]);     
+    sol1{i} = ode45(M1,[t1{i}(1),t1{i}(end)],[deval(sol1{i-1},t1{i-1}(end))],opts);     
 end
     
 
 [V2] = odeToVectorField(diff(diff(y)) + W0/Q*diff(y) + W0^2*y == 0);
 M2 = matlabFunction(V1,'vars', {'t','Y'});                   
-sol2 = ode45(M2,[t2(1),t2(end)],[deval(sol1{N*2},t1{N*2}(end))]);  
+sol2 = ode45(M2,[t2(1),t2(end)],[deval(sol1{N*2},t1{N*2}(end))],opts);  
 
 
 % **** NEED TO OPTIMIZE THIS ****

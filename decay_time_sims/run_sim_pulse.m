@@ -1,8 +1,8 @@
 function out = run_sim_pulse(tp,td,tau)
-    f0 = 277261;
+    f0 = 68e3;
     T = 1/f0;
     W0 = 2*pi*f0;
-    Q = 10000;
+    Q = 28000;
     k = 22;
     F0 = 9.85e-10;
     Fes = 3.09e-9;
@@ -40,7 +40,7 @@ function out = run_sim_pulse(tp,td,tau)
     %end
     
     %sstail = vertcat(t0tail,y0tail);
-0
+
     %fprintf('\n\nSaving initial ring-up data...')
     %dlmwrite(strcat('../outputs/Q10000tau_',num2str(tau),'/','ringUpTail.csv'),vertcat(t0tail,y0tail),'delimiter',',','precision',9);
     %fprintf('\t  done.\n\n')
@@ -56,7 +56,7 @@ function out = run_sim_pulse(tp,td,tau)
     
     % Iterate through each pulse length and solve each set of delay times
     % using the initial conditions from the original steady-state solution
-    parpool(6)
+    parpool(4)
     for i = 1:length(tp)
         parfor j = 1:length(td)
             out1 = sub_cycle_sim_pulse(initConds(j,:),f0,Q,k,F0,Fes,df,tau,Fs,tp(i),100,td(j));
