@@ -51,7 +51,7 @@ M0 = matlabFunction(V0,'vars', {'t','Y'});   % Make it a Matlab function
 fprintf('\t  done.')
 
 fprintf('\n\nSolving ODES...')
-sol0 = ode23(M0,[t0(1),t0(end)],[0,1e-8]);      % Solve it, y(0) = 0, y'(0) = 1
+sol0 = ode45(M0,[t0(1),t0(end)],[0,1e-8]);      % Solve it, y(0) = 0, y'(0) = 1
 fprintf('\t  done.')
 
 output = sol0;
