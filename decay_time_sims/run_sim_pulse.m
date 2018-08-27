@@ -33,16 +33,16 @@ function out = run_sim_pulse(tp,td,tau)
     %y0tail = deval(sol0,t0tail,1); 
     %fprintf('\t  done.\n\n')
     
-    %if(~exist(strcat('../outputs/Q500tau_',num2str(tau))))
-    %	    fprintf(strcat('\n\nCreating directory ../outputs/Q500tau_',num2str(tau),'...')) 
-    %	    mkdir(strcat('../outputs/Q500tau_',num2str(tau)))
+    %if(~exist(strcat('../outputs/Q5000tau_',num2str(tau))))
+    %	    fprintf(strcat('\n\nCreating directory ../outputs/Q5000tau_',num2str(tau),'...')) 
+    %	    mkdir(strcat('../outputs/Q5000tau_',num2str(tau)))
     %	    fprintf('  done.\n\n')
     %end
     
     %sstail = vertcat(t0tail,y0tail);
-
+0
     %fprintf('\n\nSaving initial ring-up data...')
-    %dlmwrite(strcat('../outputs/Q500tau_',num2str(tau),'/','ringUpTail.csv'),vertcat(t0tail,y0tail),'delimiter',',','precision',9);
+    %dlmwrite(strcat('../outputs/Q5000tau_',num2str(tau),'/','ringUpTail.csv'),vertcat(t0tail,y0tail),'delimiter',',','precision',9);
     %fprintf('\t  done.\n\n')
 
     % Get the end-points to use as initial conditions for the pulse-applied
@@ -63,13 +63,13 @@ function out = run_sim_pulse(tp,td,tau)
 	    out1(1,:) = out1(1,:)-t0end;	% Zero the time when the drive is turned off            
             % If no directory for this pulse time and tau, create one then
             % save the file
-            if(~exist(strcat('../outputs/Q500tau_',num2str(tau),'/','tp_',num2str(tp(i)),'/'),'dir'))
-                fprintf(strcat('\n\nCreating folder:\t','../outputs/tau_',num2str(tau),'/','tp_',num2str(tp(i)),'/ ...'))
-                mkdir(strcat('../outputs/Q500tau_',num2str(tau),'/','tp_',num2str(tp(i)),'/'))
+            if(~exist(strcat('../outputs/Q5000tau_',num2str(tau),'/','tp_',num2str(tp(i)),'/'),'dir'))
+                fprintf(strcat('\n\nCreating folder:\t','../outputs/Q5000tau_',num2str(tau),'/','tp_',num2str(tp(i)),'/ ...'))
+                mkdir(strcat('../outputs/Q5000tau_',num2str(tau),'/','tp_',num2str(tp(i)),'/'))
             	fprintf('\t  done.')
 	    end 
-                fprintf(strcat('\n\nWriting file:\t','../outputs/Q500tau_',num2str(tau),'/','tp_',num2str(tp(i)),'/','td_',num2str(td(j)),'.csv ...'))
-		dlmwrite(strcat('../outputs/Q500tau_',num2str(tau),'/','tp_',num2str(tp(i)),'/','td_',num2str(td(j)),'.csv')...
+                fprintf(strcat('\n\nWriting file:\t','../outputs/Q5000tau_',num2str(tau),'/','tp_',num2str(tp(i)),'/','td_',num2str(td(j)),'.csv ...'))
+		dlmwrite(strcat('../outputs/Q5000tau_',num2str(tau),'/','tp_',num2str(tp(i)),'/','td_',num2str(td(j)),'.csv')...
 		,horzcat(vertcat((t0end+td(j)-T*50:ts:t0end+td(j)-ts)-t0end,deval(sol0,t0end+td(j)-T*50:ts:t0end+td(j)-ts,1)),out1)...
 		,'delimiter',',','precision',9)
 		fprintf('\t  done.')
