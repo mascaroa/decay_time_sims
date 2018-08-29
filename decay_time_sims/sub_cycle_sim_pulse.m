@@ -57,8 +57,8 @@ for i = 2:N*2
     t1{i} = t1{i-1}(end)+ts:ts:t1{i-1}(end)+(1-mod(i,2))*(1/f0-tp)+mod(i,2)*tp;     % Pulse-applied time array
 end
 
-% Solve another 1000 cycles past when the pulses are stopped
-t2 = t1{N*2}(end):ts:t1{N*2}(end)+1000*T;
+% Solve another 100 cycles past when the pulses are stopped
+t2 = t1{N*2}(end):ts:t1{N*2}(end)+100*T;
 
 
 %FdFunc = @(t) F0*sin(W0*t);                   % Drive force

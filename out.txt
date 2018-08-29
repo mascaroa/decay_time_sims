@@ -1,132 +1,5 @@
 
                             < M A T L A B (R) >
-                  Copyright 1984-2014 The MathWorks, Inc.
-                    R2014a (8.3.0.532) 64-bit (glnxa64)
-                             February 11, 2014
-
- 
-To get started, type one of these: helpwin, helpdesk, or demo.
-For product information, visit www.mathworks.com.
- 
->> >> >> >> >> >> >> >> >> 
-
-Starting script....
-
->> 
-
-Starting first simulation...
-
-
-
- Evaluating ring-up -> steady state solution...  done.
-
-Getting initial conditions for each delay time..... done.
-
-Starting parallel pool (parpool) using the 'local' profile ... connected to 6 workers.
-
-ans = 
-
- Pool with properties: 
-
-            Connected: true
-           NumWorkers: 6
-              Cluster: local
-        AttachedFiles: {}
-          IdleTimeout: 30 minute(s) (30 minutes remaining)
-          SpmdEnabled: true
-
-Writing file:	../outputs/Q500tau_3e-07/tp_1e-07/td_5e-08.csv
-Writing file:	../outputs/Q500tau_3e-07/tp_1e-07/td_1e-08.csv
-Writing file:	../outputs/Q500tau_3e-07/tp_1e-07/td_2e-08.csv
-Creating folder:	../outputs/tau_3e-07/tp_1e-07/Writing file:	../outputs/Q500tau_3e-07/tp_1e-07/td_4e-08.csv
-Writing file:	../outputs/Q500tau_3e-07/tp_1e-07/td_3e-08.csv
-Writing file:	../outputs/Q500tau_3e-07/tp_1e-07/td_6e-08.csv
-
-
-Done pulse time 1 ...
-
-Writing file:	../outputs/Q500tau_3e-07/tp_5e-07/td_5e-08.csv
-Writing file:	../outputs/Q500tau_3e-07/tp_5e-07/td_1e-08.csv
-Writing file:	../outputs/Q500tau_3e-07/tp_5e-07/td_2e-08.csv
-Writing file:	../outputs/Q500tau_3e-07/tp_5e-07/td_4e-08.csv
-Creating folder:	../outputs/tau_3e-07/tp_5e-07/Writing file:	../outputs/Q500tau_3e-07/tp_5e-07/td_3e-08.csv
-Writing file:	../outputs/Q500tau_3e-07/tp_5e-07/td_6e-08.csv
-
-
-Done pulse time 2 ...
-
-Writing file:	../outputs/Q500tau_3e-07/tp_1e-06/td_5e-08.csv
-Creating folder:	../outputs/tau_3e-07/tp_1e-06/Writing file:	../outputs/Q500tau_3e-07/tp_1e-06/td_1e-08.csv
-Writing file:	../outputs/Q500tau_3e-07/tp_1e-06/td_2e-08.csv
-Writing file:	../outputs/Q500tau_3e-07/tp_1e-06/td_4e-08.csv
-Writing file:	../outputs/Q500tau_3e-07/tp_1e-06/td_3e-08.csv
-Writing file:	../outputs/Q500tau_3e-07/tp_1e-06/td_6e-08.csv
-
-
-Done pulse time 3 ...
-
-Writing file:	../outputs/Q500tau_3e-07/tp_1.5e-06/td_5e-08.csv
-Writing file:	../outputs/Q500tau_3e-07/tp_1.5e-06/td_1e-08.csv
-Writing file:	../outputs/Q500tau_3e-07/tp_1.5e-06/td_2e-08.csv
-Creating folder:	../outputs/tau_3e-07/tp_1.5e-06/Writing file:	../outputs/Q500tau_3e-07/tp_1.5e-06/td_4e-08.csv
-Writing file:	../outputs/Q500tau_3e-07/tp_1.5e-06/td_3e-08.csv
-Writing file:	../outputs/Q500tau_3e-07/tp_1.5e-06/td_6e-08.csv
-
-
-Done pulse time 4 ...
-
-Writing file:	../outputs/Q500tau_3e-07/tp_3e-06/td_5e-08.csv
-Writing file:	../outputs/Q500tau_3e-07/tp_3e-06/td_1e-08.csv
-Writing file:	../outputs/Q500tau_3e-07/tp_3e-06/td_2e-08.csv
-Writing file:	../outputs/Q500tau_3e-07/tp_3e-06/td_4e-08.csv
-Writing file:	../outputs/Q500tau_3e-07/tp_3e-06/td_3e-08.csv
-Creating folder:	../outputs/tau_3e-07/tp_3e-06/Writing file:	../outputs/Q500tau_3e-07/tp_3e-06/td_6e-08.csv
-
-
-Done pulse time 5 ...
-
-
-ans =
-
-   1.9131e+03
-
->> 
-                            < M A T L A B (R) >
-                  Copyright 1984-2015 The MathWorks, Inc.
-                   R2015a (8.5.0.197613) 64-bit (maci64)
-                             February 12, 2015
-
- 
-To get started, type one of these: helpwin, helpdesk, or demo.
-For product information, visit www.mathworks.com.
- 
-
-	Academic License
-
-
->> >> >> >> >> >> >> >> >> 
-
-Starting script....
-
->> >> 
-                            < M A T L A B (R) >
-                  Copyright 1984-2015 The MathWorks, Inc.
-                   R2015a (8.5.0.197613) 64-bit (maci64)
-                             February 12, 2015
-
- 
-To get started, type one of these: helpwin, helpdesk, or demo.
-For product information, visit www.mathworks.com.
- 
-
-	Academic License
-
->> >> >> >> >> >> >> >> >> 
-
-Starting script....
-
->> >> 
-                            < M A T L A B (R) >
                   Copyright 1984-2015 The MathWorks, Inc.
                    R2015a (8.5.0.197613) 64-bit (maci64)
                              February 12, 2015
@@ -144,20 +17,139 @@ Starting script....
 
 >> 
 
-Starting first simulation...
+Starting initial ringup simulation...
 
 
 
- Evaluating ring-up -> steady state solution...  done.
+Creating vector field from ODE...	  done.
+
+Making it a MATLAB function...	  done.
+
+Solving ODES...	  done.
+
+Getting initial conditions for each delay time.....	 done.
+
+Starting parallel pool (parpool) using the 'local' profile ... connected to 4 workers.
+
+ans = 
+
+ Pool with properties: 
+
+            Connected: true
+           NumWorkers: 4
+              Cluster: local
+        AttachedFiles: {}
+          IdleTimeout: 30 minute(s) (30 minutes remaining)
+          SpmdEnabled: true
 
 
 
-Creating directory ../outputs/Q500tau_3e-07...  done.
+Creating folder:	../outputs/Q10000tau_3e-07/tp_1e-07/ ...	  done.
 
 
 
- Saving initial ring-up data...  done.
 
-Getting initial conditions for each delay time..... done.
 
-Starting parallel pool (parpool) using the 'local' profile ... >> 
+
+
+Writing file:	../outputs/Q10000tau_3e-07/tp_1e-07/td_6e-07.csv ...	  done.
+
+Writing file:	../outputs/Q10000tau_3e-07/tp_1e-07/td_2.4e-06.csv ...	  done.
+
+Writing file:	../outputs/Q10000tau_3e-07/tp_1e-07/td_1.8e-06.csv ...	  done.
+
+Writing file:	../outputs/Q10000tau_3e-07/tp_1e-07/td_1.2e-06.csv ...	  done.
+Writing file:	../outputs/Q10000tau_3e-07/tp_1e-07/td_0.csv ...	  done.
+Writing file:	../outputs/Q10000tau_3e-07/tp_1e-07/td_3.6e-06.csv ...	  done.
+Writing file:	../outputs/Q10000tau_3e-07/tp_1e-07/td_3e-06.csv ...	  done.
+
+
+Done pulse time 1 ...
+*****************
+
+
+
+Creating folder:	../outputs/Q10000tau_3e-07/tp_5e-07/ ...	  done.
+
+
+
+
+
+
+
+Writing file:	../outputs/Q10000tau_3e-07/tp_5e-07/td_6e-07.csv ...	  done.
+
+Writing file:	../outputs/Q10000tau_3e-07/tp_5e-07/td_1.8e-06.csv ...	  done.
+
+Writing file:	../outputs/Q10000tau_3e-07/tp_5e-07/td_3e-06.csv ...	  done.
+
+Writing file:	../outputs/Q10000tau_3e-07/tp_5e-07/td_1.2e-06.csv ...	  done.
+Writing file:	../outputs/Q10000tau_3e-07/tp_5e-07/td_0.csv ...	  done.
+Writing file:	../outputs/Q10000tau_3e-07/tp_5e-07/td_2.4e-06.csv ...	  done.
+Writing file:	../outputs/Q10000tau_3e-07/tp_5e-07/td_3.6e-06.csv ...	  done.
+
+
+Done pulse time 2 ...
+*****************
+
+Operation terminated by user during deval (line 151)
+
+
+In sub_cycle_sim_pulse (line 112)
+y2 = deval(sol2,t2,1);
+
+In run_sim_pulse>(parfor body) (line 62)
+            out1 = sub_cycle_sim_pulse(initConds(j,:),f0,Q,k,F0,Fes,df,tau,Fs,tp(i),100,td(j));
+
+In parallel_function>make_general_channel/channel_general (line 929)
+                    F(C{:});
+
+In remoteParallelFunction (line 38)
+        out = parallel.internal.pool.serialize(feval(channel, channelArgs{:}));
+
+Operation terminated by user during deval (line 151)
+
+
+In sub_cycle_sim_pulse (line 112)
+y2 = deval(sol2,t2,1);
+
+In run_sim_pulse>(parfor body) (line 62)
+            out1 = sub_cycle_sim_pulse(initConds(j,:),f0,Q,k,F0,Fes,df,tau,Fs,tp(i),100,td(j));
+
+In parallel_function>make_general_channel/channel_general (line 929)
+                    F(C{:});
+
+In remoteParallelFunction (line 38)
+        out = parallel.internal.pool.serialize(feval(channel, channelArgs{:}));
+
+Operation terminated by user during deval (line 156)
+
+
+In sub_cycle_sim_pulse (line 112)
+y2 = deval(sol2,t2,1);
+
+In run_sim_pulse>(parfor body) (line 62)
+            out1 = sub_cycle_sim_pulse(initConds(j,:),f0,Q,k,F0,Fes,df,tau,Fs,tp(i),100,td(j));
+
+In parallel_function>make_general_channel/channel_general (line 929)
+                    F(C{:});
+
+In remoteParallelFunction (line 38)
+        out = parallel.internal.pool.serialize(feval(channel, channelArgs{:}));
+
+Operation terminated by user during deval (line 151)
+
+
+In sub_cycle_sim_pulse (line 112)
+y2 = deval(sol2,t2,1);
+
+In run_sim_pulse>(parfor body) (line 62)
+            out1 = sub_cycle_sim_pulse(initConds(j,:),f0,Q,k,F0,Fes,df,tau,Fs,tp(i),100,td(j));
+
+In parallel_function>make_general_channel/channel_general (line 929)
+                    F(C{:});
+
+In remoteParallelFunction (line 38)
+        out = parallel.internal.pool.serialize(feval(channel, channelArgs{:}));
+
+>> 
