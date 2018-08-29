@@ -30,7 +30,7 @@ T = 1/f0;           % Period
 m = k/W0^2;         % Effective mass
 
 ts = 1/Fs;
-tTrig = Q*T*3;                  % Trigger time at 3*Q periods into the sim.
+tTrig = T*200;                  % Trigger time at 3*Q periods into the sim.
 
 % Shift the trigger time by 1/4 period because of the phase between
 % drive/oscillator
@@ -53,7 +53,7 @@ fprintf('\t  done.')
 opts = odeset('RelTol', 1e-10, 'AbsTol', 1e-12);
 
 fprintf('\n\nSolving ODES...')
-sol0 = ode45(M0,[t0(1),t0(end)],[0,1e-8],opts);      % Solve it, y(0) = 0, y'(0) = 1
+sol0 = ode45(M0,[t0(1),t0(end)],[1e-8,0],opts);      % Solve it, y(0) = 0, y'(0) = 1
 fprintf('\t  done.')
 
 output = sol0;
