@@ -30,12 +30,12 @@ T = 1/f0;           % Period
 m = k/W0^2;         % Effective mass
 
 ts = 1/Fs;
-tTrig = T*200;                  % Trigger time at 3*Q periods into the sim.
+tTrig = 3*Q*T;                  % Trigger time at 3*Q periods into the sim.
 
 % Shift the trigger time by 1/4 period because of the phase between
 % drive/oscillator
 
-t0 = 0:ts:tTrig+T/4+td;            % Ring-up time array
+t0 = 0:ts:tTrig+T/4-ts+td;            % Ring-up time array
 
 FdFunc = @(t) F0*sin(W0*t);                   % Drive force
 
