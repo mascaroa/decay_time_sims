@@ -25,4 +25,131 @@ Creating vector field from ODE...	  done.
 
 Making it a MATLAB function...	  done.
 
-Solving ODES...>> 
+Solving ODES...	  done.
+
+Getting initial conditions for each delay time.....	 done.
+
+Starting parallel pool (parpool) using the 'local' profile ... connected to 4 workers.
+
+ans = 
+
+ Pool with properties: 
+
+            Connected: true
+           NumWorkers: 4
+              Cluster: local
+        AttachedFiles: {}
+          IdleTimeout: 30 minute(s) (30 minutes remaining)
+          SpmdEnabled: true
+
+
+
+Creating folder:	../outputs/Q10000tau_3e-07/tp_1e-07/ ...	  done.
+
+
+
+
+
+
+
+Writing file:	../outputs/Q10000tau_3e-07/tp_1e-07/td_6e-07.csv ...	  done.
+
+Writing file:	../outputs/Q10000tau_3e-07/tp_1e-07/td_2.4e-06.csv ...	  done.
+
+Writing file:	../outputs/Q10000tau_3e-07/tp_1e-07/td_1.8e-06.csv ...	  done.
+
+Writing file:	../outputs/Q10000tau_3e-07/tp_1e-07/td_1.2e-06.csv ...	  done.
+Writing file:	../outputs/Q10000tau_3e-07/tp_1e-07/td_0.csv ...	  done.
+Writing file:	../outputs/Q10000tau_3e-07/tp_1e-07/td_3.6e-06.csv ...	  done.
+Writing file:	../outputs/Q10000tau_3e-07/tp_1e-07/td_3e-06.csv ...	  done.
+
+
+Done pulse time 1 ...
+*****************
+
+
+
+Creating folder:	../outputs/Q10000tau_3e-07/tp_5e-07/ ...	  done.
+
+
+
+
+
+
+
+Writing file:	../outputs/Q10000tau_3e-07/tp_5e-07/td_6e-07.csv ...	  done.
+
+Writing file:	../outputs/Q10000tau_3e-07/tp_5e-07/td_1.8e-06.csv ...	  done.
+
+Writing file:	../outputs/Q10000tau_3e-07/tp_5e-07/td_3e-06.csv ...	  done.
+
+Writing file:	../outputs/Q10000tau_3e-07/tp_5e-07/td_1.2e-06.csv ...	  done.
+Writing file:	../outputs/Q10000tau_3e-07/tp_5e-07/td_0.csv ...	  done.
+Writing file:	../outputs/Q10000tau_3e-07/tp_5e-07/td_2.4e-06.csv ...	  done.
+Writing file:	../outputs/Q10000tau_3e-07/tp_5e-07/td_3.6e-06.csv ...	  done.
+
+
+Done pulse time 2 ...
+*****************
+
+Operation terminated by user during deval (line 151)
+
+
+In sub_cycle_sim_pulse (line 112)
+y2 = deval(sol2,t2,1);
+
+In run_sim_pulse>(parfor body) (line 62)
+            out1 = sub_cycle_sim_pulse(initConds(j,:),f0,Q,k,F0,Fes,df,tau,Fs,tp(i),100,td(j));
+
+In parallel_function>make_general_channel/channel_general (line 929)
+                    F(C{:});
+
+In remoteParallelFunction (line 38)
+        out = parallel.internal.pool.serialize(feval(channel, channelArgs{:}));
+
+Operation terminated by user during deval (line 151)
+
+
+In sub_cycle_sim_pulse (line 112)
+y2 = deval(sol2,t2,1);
+
+In run_sim_pulse>(parfor body) (line 62)
+            out1 = sub_cycle_sim_pulse(initConds(j,:),f0,Q,k,F0,Fes,df,tau,Fs,tp(i),100,td(j));
+
+In parallel_function>make_general_channel/channel_general (line 929)
+                    F(C{:});
+
+In remoteParallelFunction (line 38)
+        out = parallel.internal.pool.serialize(feval(channel, channelArgs{:}));
+
+Operation terminated by user during deval (line 156)
+
+
+In sub_cycle_sim_pulse (line 112)
+y2 = deval(sol2,t2,1);
+
+In run_sim_pulse>(parfor body) (line 62)
+            out1 = sub_cycle_sim_pulse(initConds(j,:),f0,Q,k,F0,Fes,df,tau,Fs,tp(i),100,td(j));
+
+In parallel_function>make_general_channel/channel_general (line 929)
+                    F(C{:});
+
+In remoteParallelFunction (line 38)
+        out = parallel.internal.pool.serialize(feval(channel, channelArgs{:}));
+
+Operation terminated by user during deval (line 151)
+
+
+In sub_cycle_sim_pulse (line 112)
+y2 = deval(sol2,t2,1);
+
+In run_sim_pulse>(parfor body) (line 62)
+            out1 = sub_cycle_sim_pulse(initConds(j,:),f0,Q,k,F0,Fes,df,tau,Fs,tp(i),100,td(j));
+
+In parallel_function>make_general_channel/channel_general (line 929)
+                    F(C{:});
+
+In remoteParallelFunction (line 38)
+        out = parallel.internal.pool.serialize(feval(channel, channelArgs{:}));
+
+>> 
